@@ -1,0 +1,54 @@
+.front-page-header {
+	width: 100%;
+	height: 100vh;
+	padding: 0 50px 50px;
+	background: #F5F5F5;
+}
+
+ul {
+	margin: 0;
+}
+
+.front-page-splash {
+	width: 100%;
+	height: 100%;
+	padding: 50px;
+	border: 5px solid $yellow;
+	border-top: 0;
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+nav {
+	width: 100%;
+	margin-bottom: 50px;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.front-page-featured {
+	width: 100%;
+	height: 100%;
+	flex-grow: 1;
+	display: flex;
+	flex-flow: row nowrap;
+	// align-items: center;
+}
+
+.front-page-featured-content {
+	width: 40%;
+	height: 70%;
+	padding: 25px;
+	background: #FFF;
+	box-shadow: 0 10px 20px 0 rgba(0,0,0,.15);
+}
+
+.front-page-featured-image {
+	width: 60%;
+	// height: 100%;
+	background: url(http://unsplash.it/1000/1000) no-repeat center;
+	background-size: cover;
+	box-shadow: 0 10px 20px 0 rgba(0,0,0,.15);
+}

@@ -7,17 +7,27 @@
 * Author URI: http://hackeryou.com
 */
 
+$yellow: #f6de39;
+
 @import 'normalize';
 @import 'typography';
+@import 'frontpage';
+@import 'header';
 @import 'navigation';
 @import 'sidebar';
 @import 'comments';
 @import 'footer';
+
+
 /*
 ====================================
 Default Styling
 ====================================
 */
+
+html {
+	background: #F5F5F5;
+}
 
 img {
 	max-width: 100%;
@@ -41,11 +51,3 @@ body {
 .full {
 	width: 100%;
 }
-
-
-
-
-
-
-
-
