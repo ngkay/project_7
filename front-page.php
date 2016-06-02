@@ -31,10 +31,15 @@
 		</nav>
 		<div class="front-page-featured">
 				<div class="front-page-featured-content">
-					<h2>Headline for featured article</h2>
-					<p>Excerpt from article Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, cumque nobis quaerat qui, nemo beatae iste impedit inventore. Odio sint modi accusantium molestias corrupti dicta illo ipsum nesciunt ipsam. Ipsum!</p>
+					<?php $featured = get_field('featured_post') ?>
+					<!-- <pre> <?php print_r($featured); ?></pre> -->
+					<h2><?php echo $featured->post_title; ?></h2>
+					<p><?php echo wp_trim_words($featured->post_content, 100); ?></p>
 				</div>
-				<div class="front-page-featured-image"></div>
+				<div class="front-page-featured-image">
+					<?php $featuredImage = get_the_post_thumbnail($featured, 'full'); ?>
+					<?php echo $featuredImage ?>
+				</div>
 			</div>
 	</div> <!-- /.container -->
 </header><!--/.header-->

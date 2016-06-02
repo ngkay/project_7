@@ -277,4 +277,4 @@ function get_post_parent($post) {
 	}
 }
 
-add_filter('show_admin_bar', '__return_false');
+// add_filter('show_admin_bar', '__return_false');

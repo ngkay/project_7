@@ -24,6 +24,7 @@
       </h2>
 
 			<section class="entry-content">
+				<?php echo get_the_post_thumbnail($post); ?>
 				<?php the_content('Continue reading <span class="meta-nav">&rarr;</span>'); ?>
 				<?php wp_link_pages( array(
           'before' => '<div class="page-link"> Pages:',
