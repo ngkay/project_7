@@ -7,6 +7,7 @@
 	<title><?php  wp_title('|', true, 'right'); ?></title>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<!-- stylesheets should be enqueued in functions.php -->
+	<link rel="stylesheet" id="style-css" href="<?php bloginfo('template_url') ?>/style.css?ver=4.5.2" type="text/css" media="all" data-skrollr-stylesheet />
 	<?php wp_head(); ?>
 </head>
 

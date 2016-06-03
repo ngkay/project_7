@@ -7,10 +7,14 @@
 * Author URI: http://hackeryou.com
 */
 
-$yellow: #f6de39;
+$main: #f6de39;
+$main2: #63FFE5;
+$dark: #293a5c;
+$light: #b6becc;
 
 @import 'normalize';
 @import 'typography';
+@import 'skrollr';
 @import 'frontpage';
 @import 'header';
 @import 'navigation';
@@ -34,11 +38,17 @@ img {
 }
 
 body {
-	color: #333;
+}
+
+.wrapper {
+	width: 90%;
+	height: 100%;
+	max-width: 1920px;
+	margin: 0 auto;
 }
 
 .container {
-	max-width: 1200px;
+	max-width: 1920px;
 	margin: 0 auto;
 }
 

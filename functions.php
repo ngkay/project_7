@@ -43,9 +43,13 @@ We'll let WordPress add them to our templates automatically instead
 of writing our own link tags in the header. */
 
 function hackeryou_styles(){
-	wp_enqueue_style('style', get_stylesheet_uri() );
+	// wp_enqueue_style('style', get_stylesheet_uri() );
 
-	wp_enqueue_style('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
+	// wp_enqueue_style('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
+
+	wp_enqueue_style('ubuntu', 'https://fonts.googleapis.com/css?family=Lato:300,400,700');
+
+	wp_enqueue_style('roboto', 'https://fonts.googleapis.com/css?family=Roboto:900,700');
 }
 
 add_action( 'wp_enqueue_scripts', 'hackeryou_styles');
@@ -57,29 +61,53 @@ function hackeryou_scripts() {
 
 	//Don't use WordPress' local copy of jquery, load our own version from a CDN instead
 	wp_deregister_script('jquery');
-  wp_enqueue_script(
-  	'jquery',
-  	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js",
-  	false, //dependencies
-  	null, //version number
-  	true //load in footer
-  );
+	wp_enqueue_script(
+		'jquery',
+		"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js",
+		false, //dependencies
+		null, //version number
+		true //load in footer
+	);
 
-  wp_enqueue_script(
-    'plugins', //handle
-    get_template_directory_uri() . '/js/plugins.js', //source
-    false, //dependencies
-    null, // version number
-    true //load in footer
-  );
+	wp_enqueue_script(
+		'font-awesome',
+		"https" .($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://use.fontawesome.com/6e94a13274.js",
+		false,
+		null,
+		true
+	);
 
-  wp_enqueue_script(
-    'scripts', //handle
-    get_template_directory_uri() . '/js/main.min.js', //source
-    array( 'jquery', 'plugins' ), //dependencies
-    null, // version number
-    true //load in footer
-  );
+	wp_enqueue_script(
+		'skrollr-stylesheets',
+		get_template_directory_uri() . '/js/skrollr.stylesheets.min.js',
+		false,
+		null,
+		true
+	);
+
+	wp_enqueue_script(
+		'skrollr',
+		"http" .($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js",
+		false,
+		null,
+		true
+	);
+
+	wp_enqueue_script(
+		'plugins', //handle
+		get_template_directory_uri() . '/js/plugins.js', //source
+		false, //dependencies
+		null, // version number
+		true //load in footer
+	);
+
+	wp_enqueue_script(
+		'scripts', //handle
+		get_template_directory_uri() . '/js/main.min.js', //source
+		array( 'jquery', 'plugins' ), //dependencies
+		null, // version number
+		true //load in footer
+	);
 }
 
 add_action( 'wp_enqueue_scripts', 'hackeryou_scripts');

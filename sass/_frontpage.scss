@@ -1,8 +1,24 @@
+// .landing {
+// 	width: 100vw;
+// 	height: 100vh;
+// 	background: $main;
+// 	position: fixed;
+// 	overflow: hidden;
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+// 	transition: all 1.5s ease-out;
+// 	z-index: 50;
+// }
+
 .front-page-header {
 	width: 100%;
 	height: 100vh;
 	padding: 0 50px 50px;
-	background: #F5F5F5;
+	margin-bottom: 50px;
+	// background: #F5F5F5;
+	background: no-repeat center center;
+	background-size: cover;
 }
 
 ul {
@@ -13,48 +29,156 @@ ul {
 	width: 100%;
 	height: 100%;
 	padding: 50px;
-	border: 5px solid $yellow;
-	border-top: 0;
+	// border: 5px solid $main;
+	// border-top: 0;
 	display: flex;
 	flex-flow: column nowrap;
+	position: relative;
+
+	&:after {
+		content: "";
+		position: absolute;
+		width: 80%;
+		height: 100%;
+		border: 5px solid $main;
+		top: -5px;
+		left: -5px;
+		// z-index: -1;
+	}
 }
 
 nav {
 	width: 100%;
-	margin-bottom: 50px;
+	margin-bottom: 100px;
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: space-between;
 	align-items: center;
+	z-index: 10;
 }
 
-.front-page-featured {
-	width: 100%;
-	height: 100%;
-	flex-grow: 1;
-	display: flex;
-	flex-flow: row nowrap;
-	align-items: flex-start;
+.blue-bar {
+	width: 15%;
+	height: 20px;
+	background: $main2;
+	position: absolute;
+	left: -50px;
+	z-index: 3;
+
+	-skrollr-animation-name: fp-blue-bar;
 }
 
-.front-page-featured-content {
-	width: 40%;
-	// height: 10%;
-	margin-top: 30px;
-	padding: 25px;
-	background: #FFF;
-	box-shadow: 0 10px 20px 0 rgba(0,0,0,.15);
-	// display: inline-block;
+.front-page-post {
+	width: 35%;
+	// height: 100%;
+	position: absolute;
+	// bottom: 50px;
+	left: 50px;
+	z-index: 5;
+
+	-skrollr-animation-name: fp-post;
 }
 
-.front-page-featured-image {
+.hero-image {
 	width: 60%;
-	height: 80%;
-	// background: url(http://unsplash.it/1000/1000) no-repeat center;
-	background-size: cover;
-	box-shadow: 0 10px 20px 0 rgba(0,0,0,.15);
+	// height: 90%;
+	position: absolute;
+	// top: 150px;
+	right: -50px;
+	z-index: 5;
+	overflow: hidden;
+	box-shadow: 0 10px 20px 0 rgba(0,0,0,.1);
+
+	-skrollr-animation-name: fp-hero;
 
 	img {
 		width: 100%;
+		display: block;
 	}
+}
+
+.featured {
+	width: 100%;
+	height: 60vh;
+	padding: 50px 5%;
+	margin: 50px 0;
+	position: relative;
+	display: inline-block;
+}
+
+.featured-photo {
+	width: 60%;
+	position: absolute;
+	left: 0;
+	z-index: 5;
+
+	-skrollr-animation-name: fp-featured-photo;
+
+	img {
+		width: 100%;
+		display: block;
+	}
+}
+
+.featured-post {
+	width: 30%;
+	position: absolute;
+	right: 5%;
+	z-index: 5;
+
+	-skrollr-animation-name: fp-featured-post;
+
+	h2 {
+		font-size: 3.3rem;
+		line-height: 40px;
+	}
+
+	p {
+		font-size: 2.2rem;
+		line-height: 30px;
+	}
+}
+
+.yellow-box {
+	width: 40%;
+	height: 75%;
+	margin: 0 auto;
+	background: $main;
+	position: absolute;
+	right: 30%;
+	z-index: 3;
+}
+
+.recent-posts {
+	width: 100%;
+	padding: 50px 5%;
+	margin: 50px 0;
+	background: $main2;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+}
+
+.recent-title {
+	position: absolute;
+	left: 50px;
+	z-index: 3;
+
+	-skrollr-animation-name: fp-recent-heading;
+
+	h1 {
+		color: $dark;
+	}
+}
+
+.recent-post {
+	width: 48%;
+	padding: 50px;
+	background: #FFF;
+	box-shadow: 0 10px 20px 0 rgba(0,0,0,.1);
+	// position: relative;
+	// top: -50px;
+	z-index: 5;
 }
