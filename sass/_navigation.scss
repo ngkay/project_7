@@ -1,14 +1,55 @@
 ul.menu {
 	margin: 0;
 	padding: 0;
+
 	li {
-		display: inline;
-		margin-right: 10px;
+		padding: 0;
+		display: inline-block;
+		margin-right: 25px;
+		font-family: 'Roboto', sans-serif;
+		font-size: 3.5rem;
+		line-height: 40px;
+		font-weight: 700;
+		position: relative;
+
+		&:after {
+			content: "";
+			position: absolute;
+			width: 120%;
+			height: 0%;
+			bottom: 5px;
+			right: 0;
+			background: $main;
+			z-index: -3;
+			transition: all .2s;
+		}
+
+		&:hover {
+			&:after {
+				height: 110%;
+				background: $dark;
+			}
+		}
+
+
+		&:last-child {
+			margin-right: 0;
+		}
+
 		a {
-			color: #333;
-			padding: 10px;
-			background: #333;
-			color: white;
+			&:hover {
+				color: $main;
+			}
 		}
 	}
+}
+
+footer ul.menu {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: flex-end;
+
+	li {
+		margin: 0;
+	};
 }

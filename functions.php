@@ -13,6 +13,7 @@ function theme_setup() {
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size(120, 90, true);
 	add_image_size('square', 150, 150, true);
+	add_image_size('feature', 900, 600, true);
 
 
 	// Add default posts and comments RSS feed links to head
@@ -45,7 +46,7 @@ of writing our own link tags in the header. */
 function hackeryou_styles(){
 	// wp_enqueue_style('style', get_stylesheet_uri() );
 
-	// wp_enqueue_style('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
+	wp_enqueue_style('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
 
 	wp_enqueue_style('ubuntu', 'https://fonts.googleapis.com/css?family=Lato:300,400,700');
 
@@ -67,14 +68,6 @@ function hackeryou_scripts() {
 		false, //dependencies
 		null, //version number
 		true //load in footer
-	);
-
-	wp_enqueue_script(
-		'font-awesome',
-		"https" .($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://use.fontawesome.com/6e94a13274.js",
-		false,
-		null,
-		true
 	);
 
 	wp_enqueue_script(
@@ -305,4 +298,4 @@ function get_post_parent($post) {
 	}
 }
 
-// add_filter('show_admin_bar', '__return_false');
+add_filter('show_admin_bar', '__return_false');

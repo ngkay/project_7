@@ -1,7 +1,20 @@
 <footer>
-  <div class="container">
-    <p>&copy; HackerYou <?php echo date('Y'); ?></p>
-  </div>
+	<div class="footer-container">
+		<div class="footer-left">
+			<h1>
+				<a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home">
+					<?php bloginfo( 'name' ); ?>
+				</a>
+			</h1>
+			<h2><?php bloginfo('description'); ?></h2>
+		</div>
+		<div class="footer-right">
+			<?php wp_nav_menu( array(
+				'container' => false,
+				'theme_location' => 'primary'
+			)); ?>
+		</div>
+	</div>
 </footer>
 
 <script>

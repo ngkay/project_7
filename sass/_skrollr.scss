@@ -1,3 +1,13 @@
+@-skrollr-keyframes fp-logo {
+	skrollr-0 {
+		top: 250px;
+	}
+
+	skrollr-600 {
+		top: 200px;
+	}
+}
+
 @-skrollr-keyframes fp-blue-bar {
 	skrollr-0 {
 		top: 300px;
@@ -30,17 +40,17 @@
 
 @-skrollr-keyframes fp-featured-photo {
 	skrollr-0 {
-		top: 200px;
+		top: 250px;
 	}
 
-	skrollr-1600 {
-		top: -200px;
+	skrollr-1300 {
+		top: -150px;
 	}
 }
 
 @-skrollr-keyframes fp-featured-post {
 	skrollr-0 {
-		top: 100px;
+		top: 200px;
 	}
 
 	skrollr-1600 {
@@ -53,7 +63,27 @@
 		top: -250px;
 	}
 
-	skrollr-1600 {
-		top: 50px;
+	skrollr-1500 {
+		top: 0px;
+	}
+}
+
+@-skrollr-keyframes fp-to-blog {
+	skrollr-800 {
+		bottom: 200px;
+	}
+
+	skrollr-1300 {
+		bottom: 0px;
+	}
+}
+
+@-skrollr-keyframes foot {
+	skrollr-800 {
+		top: 200px;
+	}
+
+	skrollr-end {
+		top: 0;
 	}
 }

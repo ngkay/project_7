@@ -26,14 +26,6 @@
 <header class="front-page-header">
 	<div class="front-page-splash">
 		<nav>
-			<div class="front-page-logo">
-				<h1>
-					<a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home">
-						<?php bloginfo( 'name' ); ?>
-					</a>
-				</h1>
-			</div>
-
 			<?php wp_nav_menu( array(
 				'container' => false,
 				'theme_location' => 'primary'
@@ -41,6 +33,14 @@
 		</nav>
 
 		<div class="blue-bar"></div>
+
+		<div class="front-page-logo">
+			<h1>
+				<a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home">
+					<?php bloginfo( 'name' ); ?>
+				</a>
+			</h1>
+		</div>
 
 		<div class="hero-image">
 			<img src="<?php echo $hero['url']; ?>" alt="<?php echo $hero['alt']; ?>">
@@ -71,7 +71,7 @@
 						$thumb_id = get_post_thumbnail_id($post->id);
 						$alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
 					?>
-					<img src="<?php the_post_thumbnail_url('large'); ?>" alt="<?php echo $alt; ?>">
+					<img src="<?php the_post_thumbnail_url('feature'); ?>" alt="<?php echo $alt; ?>">
 				</div>
 			<?php endif; ?>
 			<div class="featured-post">
@@ -99,7 +99,7 @@
 		<?php while ( $recentPostsQuery->have_posts() ) : $recentPostsQuery->the_post(); ?>
 			<article class="recent-post">
 				<div class="recent-post-text">
-					<h2><?php the_title(); ?></h2>
+					<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 					<p><?php the_excerpt(); ?></p>
 				</div>
 			</article>
@@ -114,7 +114,7 @@
 	<?php endif; ?>
 	<div class="blog-link">
 		<a href="/Project7/blog">
-			<h2>more posts</h2>
+			<h2>more posts <i class="fa fa-arrow-right"></i></h2>
 		</a>
 	</div>
 

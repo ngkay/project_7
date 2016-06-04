@@ -1,3 +1,26 @@
 footer {
-	clear: both;
+	width: 100%;
+	margin-top: 50px;
+}
+
+.footer-container {
+	width: 90%;
+	max-width: 1920px;
+	padding: 50px;
+	margin: 100px auto 50px;
+	border: 5px solid $main2;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	position: relative;
+
+	-skrollr-animation-name: foot;
+}
+
+.footer-left {
+	width: 58%;
+}
+
+.footer-right {
+	width: 38%;
 }
